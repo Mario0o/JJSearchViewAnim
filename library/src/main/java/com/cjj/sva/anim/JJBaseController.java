@@ -7,9 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PathMeasure;
 import android.support.annotation.IntDef;
-import android.util.Log;
 import android.view.View;
-import android.view.animation.AccelerateInterpolator;
 import android.view.animation.LinearInterpolator;
 
 import com.cjj.sva.utils.LogHelper;
@@ -32,7 +30,7 @@ public abstract class JJBaseController {
     private WeakReference<View> mSearchView;
     protected float[] mPos = new float[2];
 
-    @IntDef({STATE_ANIM_NONE,STATE_ANIM_START, STATE_ANIM_STOP})
+    @IntDef({STATE_ANIM_NONE, STATE_ANIM_START, STATE_ANIM_STOP})
     @Retention(RetentionPolicy.SOURCE)
     public @interface State {
     }
@@ -96,12 +94,12 @@ public abstract class JJBaseController {
 
 
     public ValueAnimator startSearchViewAnim() {
-        ValueAnimator valueAnimator = startSearchViewAnim(0, 1, 500);
+        ValueAnimator valueAnimator = startSearchViewAnim(0, 1, 600);
         return valueAnimator;
     }
 
     public ValueAnimator startSearchViewAnim(float startF, float endF, long time) {
-        ValueAnimator valueAnimator =startSearchViewAnim(startF, endF, time, null);
+        ValueAnimator valueAnimator = startSearchViewAnim(startF, endF, time, null);
         return valueAnimator;
     }
 
@@ -115,7 +113,7 @@ public abstract class JJBaseController {
                 mPro = (float) valueAnimator.getAnimatedValue();
                 if (null != pathMeasure)
                     pathMeasure.getPosTan(mPro, mPos, null);
-                LogHelper.trace("mpos--->"+mPos[0]);
+                LogHelper.trace("mpos--->" + mPos[0]);
                 getSearchView().invalidate();
             }
         });

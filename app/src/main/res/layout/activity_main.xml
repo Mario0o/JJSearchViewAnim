@@ -6,10 +6,18 @@
     android:layout_height="match_parent"
     tools:context="com.cjj.jjsearchviewanim.MainActivity">
 
+    <com.cjj.jjsearchviewanim.view.CircleSearchView
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:background="#673AB7"
+        android:layout_centerHorizontal="true">
+    </com.cjj.jjsearchviewanim.view.CircleSearchView>
+
     <com.cjj.sva.JJSearchView
         android:id="@+id/jjsv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_centerInParent="true"/>
 
     <Button
         android:layout_width="wrap_content"
